@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+
 # Create your models here.
 
 TYPEofINSTITUTION = (
@@ -32,5 +33,4 @@ class Donation(models.Model):
     pick_up_date = models.DateTimeField(null=True)
     pick_up_time = models.DateTimeField(null=True)
     pick_up_comment = models.CharField(max_length=255)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-
+    user = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
