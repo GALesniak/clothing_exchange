@@ -1,5 +1,6 @@
 from django.db import models
-from django.contrib.auth.models import User
+from accounts.models import CustomUser
+
 
 # Create your models here.
 
@@ -27,10 +28,10 @@ class Donation(models.Model):
     institution = models.ForeignKey(Institution, on_delete=models.CASCADE)
     address_1 = models.CharField(max_length=255)
     address_2 = models.PositiveIntegerField()
-    phonenumber = models.IntegerField(max_length=9)
+    phonenumber = models.IntegerField()
     city = models.CharField(max_length=255)
     zip_code = models.CharField(max_length=6)
     pick_up_date = models.DateTimeField(null=True)
     pick_up_time = models.DateTimeField(null=True)
     pick_up_comment = models.CharField(max_length=255)
-    user = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
+    user = models.ForeignKey(CustomUser, null=True, on_delete=models.SET_NULL)

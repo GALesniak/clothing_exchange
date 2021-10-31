@@ -7,13 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Help</title>
-    <link rel="icon" href="{% static 'images/favicon.ico' %}">
+
+
+
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-    <link rel="stylesheet" href="{% static 'js/app.js' %}" />
+
 
 </head>
 
+
+<h1>hello {{ first_name }}</h1>
+
+<body>
+
 {% block content %}
+
 {% endblock content %}
 
+
+<script src="{% static 'js/app.js' %}"></script>
+
+</body>
 </html>

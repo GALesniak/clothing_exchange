@@ -15,10 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from exchange_app.views import LoadingPage
+from exchange_app.views import LandingPage, AddDonation, Login, Register
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', LoadingPage.as_view(), name='main_page'),
+    path('', LandingPage.as_view(), name='main_page'),
+    path('donation/', AddDonation.as_view(), name='donation_page'),
+    path('login/', Login.as_view(), name='login_page'),
+    path('register/', Register.as_view(), name='register_page'),
 ]
 
